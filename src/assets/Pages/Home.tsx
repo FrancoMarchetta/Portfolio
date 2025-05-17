@@ -76,6 +76,60 @@ function Home() {
 
                 <section id="proyectos" className="flex items-center gap-4 my-12 px-4">
                     <div className="flex-grow border-t border-gray-600"></div>
+                    <h2 className="text-3xl font-bold text-blue-400 whitespace-nowrap">Tecnologias</h2>
+                    <div className="flex-grow border-t border-gray-600"></div>
+                </section>
+
+                <section id="technologies">
+
+                    <div id="technologies-container" className="text-amber-50 w-200 flex place-self-center flex-wrap flex-col lg:flex-row gap-10 justify-center items-center">
+                        <div className="flex flex-col items-center">
+                            <img className="w-20 h-20" src={js} alt="Javascript" />
+                            <p>Javascript</p>
+                        </div>
+                        <div className="flex flex-col items-center">
+                            <img className="w-20 h-20" src={reactjs} alt="React" />
+                            <p>React</p>
+                        </div>
+
+                        <div className="flex flex-col items-center">
+                            <img className="w-20 h-20" src={css} alt="CSS" />
+                            <p>CSS</p>
+                        </div>
+                        <div className="flex flex-col items-center">
+                            <img className="w-20 h-20" src={html} alt="HTML" />
+                            <p>HTML</p>
+                        </div>
+                        <div className="flex flex-col items-center">
+                            <img className="w-20 h-20" src={git} alt="Git" />
+                            <p>Git</p>
+                        </div>
+                        <div className="flex flex-col items-center">
+                            <img className="w-20 h-20" src={tailwind} alt="Tailwind" />
+                            <p>Tailwind</p>
+                        </div>
+                        <div className="flex flex-col items-center">
+                            <img className="w-20 h-20" src={figma} alt="Figma" />
+                            <p>Figma</p>
+                        </div>
+                        <div className="flex flex-col items-center">
+                            <img className="w-20 h-20" src={ts} alt="Typescript" />
+                            <p>Typescript</p>
+                        </div>
+                        <div className="flex flex-col items-center">
+                            <img className="w-20 h-20" src={supabase} alt="Supabase" />
+                            <p>Supabase</p>
+                        </div>
+
+                        <div className="flex flex-col items-center">
+                            <img className="w-20 h-20" src={sql} alt="SQL" />
+                            <p>SQL</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="proyectos" className="flex items-center gap-4 my-12 px-4">
+                    <div className="flex-grow border-t border-gray-600"></div>
                     <h2 className="text-3xl font-bold text-blue-400 whitespace-nowrap">Proyectos</h2>
                     <div className="flex-grow border-t border-gray-600"></div>
                 </section>
@@ -155,59 +209,9 @@ function Home() {
 
                 </section>
 
-                <section id="proyectos" className="flex items-center gap-4 my-12 px-4">
-                    <div className="flex-grow border-t border-gray-600"></div>
-                    <h2 className="text-3xl font-bold text-blue-400 whitespace-nowrap">Tecnologias</h2>
-                    <div className="flex-grow border-t border-gray-600"></div>
-                </section>
 
-                <section id="technologies">
 
-                    <div id="technologies-container" className="text-amber-50 w-200 flex place-self-center flex-wrap flex-col lg:flex-row gap-10 justify-center items-center">
-                        <div className="flex flex-col items-center">
-                            <img className="w-20 h-20" src={js} alt="Javascript" />
-                            <p>Javascript</p>
-                        </div>
-                        <div className="flex flex-col items-center">
-                            <img className="w-20 h-20" src={reactjs} alt="React" />
-                            <p>React</p>
-                        </div>
 
-                        <div className="flex flex-col items-center">
-                            <img className="w-20 h-20" src={css} alt="CSS" />
-                            <p>CSS</p>
-                        </div>
-                        <div className="flex flex-col items-center">
-                            <img className="w-20 h-20" src={html} alt="HTML" />
-                            <p>HTML</p>
-                        </div>
-                        <div className="flex flex-col items-center">
-                            <img className="w-20 h-20" src={git} alt="Git" />
-                            <p>Git</p>
-                        </div>
-                        <div className="flex flex-col items-center">
-                            <img className="w-20 h-20" src={tailwind} alt="Tailwind" />
-                            <p>Tailwind</p>
-                        </div>
-                        <div className="flex flex-col items-center">
-                            <img className="w-20 h-20" src={figma} alt="Figma" />
-                            <p>Figma</p>
-                        </div>
-                        <div className="flex flex-col items-center">
-                            <img className="w-20 h-20" src={ts} alt="Typescript" />
-                            <p>Typescript</p>
-                        </div>
-                        <div className="flex flex-col items-center">
-                            <img className="w-20 h-20" src={supabase} alt="Supabase" />
-                            <p>Supabase</p>
-                        </div>
-
-                        <div className="flex flex-col items-center">
-                            <img className="w-20 h-20" src={sql} alt="SQL" />
-                            <p>SQL</p>
-                        </div>
-                    </div>
-                </section>
 
                 {/**separador */}
                 <section id="proyectos" className="flex items-center gap-0 my-12 px-4">

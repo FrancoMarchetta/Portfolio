@@ -21,6 +21,33 @@
     }
 }
 
+@keyframes appearLeft {
+    from{
+        transform: translateX(-250rem);
+    }
+    to{
+        transform: translateX(0rem);
+
+    }
+}
+
+@keyframes appearRight {
+    from{
+        transform: translateX(250rem);
+    }
+    to{
+        transform: translateX(0rem);
+
+    }
+}
+
+.appearLeft {
+    animation: appearLeft 1s ease-in-out;
+}
+
+.appearRight {
+    animation: appearRight 1s ease-in-out;
+}
 
 
 #nav-bar{

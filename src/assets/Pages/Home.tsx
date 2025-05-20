@@ -1,8 +1,6 @@
 import Card from "../components/Card"
-import NavBar from "../components/NavBar"
 import "../Animations.css"
 import SplitText from "../components/SplitText"
-import { Link } from 'react-router-dom';
 
 //project assets
 import blackjack from "../images/blackjack.png";
@@ -22,6 +20,7 @@ import figma from "../images/figma.png"
 import supabase from "../images/supabase.png"
 import reactjs from "../images/react.png"
 import sql from "../images/sql.png"
+import electron from "../images/electron.png"
 //contact
 import email from "../images/email.svg"
 import linkedin from "../images/linkedin.svg"
@@ -118,6 +117,10 @@ function Home() {
                         <div className="flex flex-col items-center">
                             <img className="w-20 h-20" src={reactjs} alt="React" />
                             <p>React</p>
+                        </div>
+                        <div className="flex flex-col items-center">
+                            <img className="w-20 h-20" src={electron} alt="Electron" />
+                            <p>Electron JS</p>
                         </div>
 
                         <div className="flex flex-col items-center">
@@ -252,6 +255,11 @@ function Home() {
                             <div style={{ borderRadius: "8px" }} className="w-30 flex place-content-center bg-blue-700 text-amber-50 ">
                                 <img className="w-8" src={css} alt="" />
                                 <p className="mt-0.5">Css</p>
+                            </div>
+
+                            <div style={{ borderRadius: "8px" }} className="w-30 flex place-content-center bg-blue-950 text-amber-50 ">
+                                <img className="w-8" src={electron} alt="" />
+                                <p className="mt-0.5">ElectronJS</p>
                             </div>
 
                         </Card>

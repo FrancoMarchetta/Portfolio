@@ -1,10 +1,14 @@
-import React from 'react'
-import { useNavigate, Link } from 'react-router-dom'
+import { useEffect } from 'react'
+import { useNavigate, Link, useLocation } from 'react-router-dom'
 
 function NavBar() {
+    const navigate = useNavigate();
+    const location = useLocation();
 
-
-    const path = useNavigate();
+    // Handle scroll after navigation
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, [location.pathname]);
 
     return (
         <main
@@ -16,13 +20,11 @@ function NavBar() {
             }}
         >
             <Link
-
                 to="/"
                 className='hover:text-blue-400 duration-300'
                 onClick={(e) => {
                     e.preventDefault();
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                    path("/")
+                    navigate("/");
                 }}
             >
                 Inicio
@@ -33,7 +35,7 @@ function NavBar() {
                 onClick={(e) => {
                     e.preventDefault();
                     document.getElementById('technologies')?.scrollIntoView({ behavior: 'smooth' });
-                    path("/#technologies")
+                    navigate("/#technologies")
                 }}
             >
                 Tecnologías
@@ -44,7 +46,7 @@ function NavBar() {
                 onClick={(e) => {
                     e.preventDefault();
                     document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
-                    path("/#projects")
+                    navigate("/#projects")
                 }}
             >
                 Proyectos

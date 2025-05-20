@@ -74,6 +74,7 @@ const SplitText: React.FC<SplitTextProps> = ({
 
     return (
         <h1
+            //esto es lo que lo hace azul. estuve una hora buscando y resulta que era esto
             style={{ color: "#279EFF", textShadow: "10px 7px 4px #000" }}
 
             ref={ref}

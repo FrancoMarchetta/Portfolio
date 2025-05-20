@@ -2,6 +2,7 @@ import Card from "../components/Card"
 import NavBar from "../components/NavBar"
 import "../Animations.css"
 import SplitText from "../components/SplitText"
+import { Link } from 'react-router-dom';
 
 //project assets
 import blackjack from "../images/blackjack.png";
@@ -25,29 +26,22 @@ import sql from "../images/sql.png"
 import email from "../images/email.svg"
 import linkedin from "../images/linkedin.svg"
 import github from "../images/github.svg"
+import { useNavigate } from "react-router-dom";
 
 
 function Home() {
     //si se deja el secondButtonText vacio, no se renderiza el boton. Epica solucion de mi parte
+    const path = useNavigate();
+
+    const goInfoInmoVW = () => {
+        path("/InmoVW")
+    }
 
     return (
         <>
 
-            <main id="home" className="h-dvh flex flex-col gap-8 ">
 
-                <div className="h-30 self-end mr-8 " style={{ top: "0" }}>
-                    <NavBar>
-                        <a href="#home"><p className='hover:cursor-pointer hover:text-blue-400 duration-305'>Inicio</p></a>
-                        <a href="#technologies"><p className='hover:cursor-pointer hover:text-blue-400 duration-305'>Tecnologias</p></a>
-                        <a href="#projects"><p className='hover:cursor-pointer hover:text-blue-400 duration-305'>Projectos</p></a>
-                        <select className="hover:text-blue-400 cursor-pointer" name="" id="">
-                            <option className='text-black' value="">Español</option>
-                            <option className='text-black' value="">English</option>
-                        </select>
-
-                    </NavBar>
-
-                </div>
+            <main id="home" className=" h-dvh flex flex-col gap-8">
 
                 <br />
                 <br />
@@ -62,7 +56,7 @@ function Home() {
                 <section    >
                     <div className=" lg:w-300 flex justify-center">
                         <SplitText
-                            className="text-7xl drop-shadow-lg"
+                            className="text-7xl text drop-shadow-lg"
                             text="Franco Marchetta"
                             delay={150}
                             animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
@@ -198,6 +192,8 @@ function Home() {
                             buttonImage={info}
                             secondButtonText=""
                             secondButtonImage={code}
+                            goToInfo={goInfoInmoVW}
+                            goToCode={""}
                         >
                             <div className="flex gap-4 w-fit">
 
@@ -240,6 +236,8 @@ function Home() {
                             buttonImage={info}
                             secondButtonText="Github"
                             secondButtonImage={code}
+                            goToCode={""}
+                            goToInfo={""}
                         >
                             <div style={{ borderRadius: "8px" }} className="w-30 flex place-content-center bg-blue-700 text-amber-50 ">
                                 <img className="w-8" src={reactjs} alt="" />

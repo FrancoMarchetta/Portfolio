@@ -3,7 +3,7 @@ import ejemplo from "../images/image 1.png"
 import image from "../images/github.svg"
 import "./css/Card.css"
 
-function Card({ img, projectName, description, buttonImage, buttonText, secondButtonImage, secondButtonText, children }: { img: string, projectName: string, description: string, buttonImage: string, buttonText: string, secondButtonImage: string, secondButtonText: string, children: React.ReactNode }) {
+function Card({ img, projectName, goToInfo, goToCode, description, buttonImage, buttonText, secondButtonImage, secondButtonText, children }: { img: string, projectName: string, description: string, goToInfo: any, goToCode: any, buttonImage: string, buttonText: string, secondButtonImage: string, secondButtonText: string, children: React.ReactNode }) {
     return (
         <>
             <section className='lg:flex gap-4' >
@@ -26,6 +26,7 @@ function Card({ img, projectName, description, buttonImage, buttonText, secondBu
                     <div className='flex gap-6 w-80'>
                         <div className='flex'>
                             <button
+                                onClick={goToInfo}
                                 className='flex items-center justify-center w-full h-full px-4 py-2 bg-amber-50 font-bold rounded-lg shadow-md hover:bg-amber-200 hover:cursor-pointer transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-amber-400'
                             >
                                 <img className='size-8 mr-2' src={buttonImage} alt="" />
@@ -35,6 +36,7 @@ function Card({ img, projectName, description, buttonImage, buttonText, secondBu
 
                         <div className={secondButtonText == "" ? "hide-button" : 'flex'}>
                             <button
+                                onClick={goToCode}
                                 className='flex items-center justify-center w-full h-full px-4 py-2 bg-amber-50 font-bold rounded-lg shadow-md hover:bg-amber-200 hover:cursor-pointer transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-amber-400'
                             >
                                 <img className='size-8 mr-2' src={secondButtonImage} alt="" />

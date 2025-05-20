@@ -7,6 +7,9 @@ import SplitText from "../components/SplitText"
 import blackjack from "../images/blackjack.png";
 import inmovw from "../images/inmovw.png";
 
+import code from "../images/code.svg"
+import info from "../images/info.svg"
+
 //technologies
 import js from "../images/js.png"
 import ts from "../images/ts.png"
@@ -25,15 +28,18 @@ import github from "../images/github.svg"
 
 
 function Home() {
+    //si se deja el secondButtonText vacio, no se renderiza el boton. Epica solucion de mi parte
+
     return (
         <>
-            <main className="h-dvh flex flex-col gap-8 ">
+
+            <main id="home" className="h-dvh flex flex-col gap-8 ">
 
                 <div className="h-30 self-end mr-8 " style={{ top: "0" }}>
                     <NavBar>
                         <a href="#home"><p className='hover:cursor-pointer hover:text-blue-400 duration-305'>Inicio</p></a>
-                        <a href="#projects"><p className='hover:cursor-pointer hover:text-blue-400 duration-305'>Projectos</p></a>
                         <a href="#technologies"><p className='hover:cursor-pointer hover:text-blue-400 duration-305'>Tecnologias</p></a>
+                        <a href="#projects"><p className='hover:cursor-pointer hover:text-blue-400 duration-305'>Projectos</p></a>
                         <select className="hover:text-blue-400 cursor-pointer" name="" id="">
                             <option className='text-black' value="">Español</option>
                             <option className='text-black' value="">English</option>
@@ -42,11 +48,18 @@ function Home() {
                     </NavBar>
 
                 </div>
+
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
                 <br />
                 <br />
                 <br />
 
-                <section id="home">
+                <section    >
                     <div className=" lg:w-300 flex justify-center">
                         <SplitText
                             className="text-7xl drop-shadow-lg"
@@ -72,13 +85,34 @@ function Home() {
                     </div>
                 </section>
 
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
 
 
-                <section id="proyectos" className="flex items-center gap-4 my-12 px-4">
+
+                <section id="technologies" className="flex items-center gap-4 my-12 px-4">
                     <div className="flex-grow border-t border-gray-600"></div>
                     <h2 className="text-3xl font-bold text-blue-400 whitespace-nowrap">Tecnologias</h2>
                     <div className="flex-grow border-t border-gray-600"></div>
                 </section>
+
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
 
                 <section id="technologies">
 
@@ -128,20 +162,42 @@ function Home() {
                     </div>
                 </section>
 
-                <section id="proyectos" className="flex items-center gap-4 my-12 px-4">
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+
+                <section id="projects" className="flex items-center gap-4 my-12 px-4">
                     <div className="flex-grow border-t border-gray-600"></div>
                     <h2 className="text-3xl font-bold text-blue-400 whitespace-nowrap">Proyectos</h2>
                     <div className="flex-grow border-t border-gray-600"></div>
                 </section>
 
 
-                <section id="projects" className="w-250 flex-wrap place-self-center  gap-10 justify-center items-center">
+
+
+                <section className="w-250 flex-wrap place-self-center  gap-10 justify-center items-center">
 
                     <div>
                         <Card
                             img={inmovw}
                             projectName="Inmovw"
                             description="Aplicación web para la gestión de propiedades inmobiliarias. Desarrollada con React, CSS y Supabase. Permite a los usuarios buscar y filtrar propiedades mientras ."
+                            buttonText="Info"
+                            buttonImage={info}
+                            secondButtonText=""
+                            secondButtonImage={code}
                         >
                             <div className="flex gap-4 w-fit">
 
@@ -167,6 +223,7 @@ function Home() {
 
                             </div>
 
+
                         </Card>
                     </div>
 
@@ -179,6 +236,10 @@ function Home() {
                             img={blackjack}
                             projectName="Blackjack"
                             description="Juego de cartas Blackjack, desarrollado con React y Tailwind CSS. El objetivo es sumar 21 puntos o lo más cercano posible sin pasarse."
+                            buttonText="info"
+                            buttonImage={info}
+                            secondButtonText="Github"
+                            secondButtonImage={code}
                         >
                             <div style={{ borderRadius: "8px" }} className="w-30 flex place-content-center bg-blue-700 text-amber-50 ">
                                 <img className="w-8" src={reactjs} alt="" />

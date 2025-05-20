@@ -1,10 +1,12 @@
 import React from 'react'
 import ejemplo from "../images/image 1.png"
 import image from "../images/github.svg"
-function Card({ img, projectName, description, children }: { img: string, projectName: string, description: string, children: React.ReactNode }) {
+import "./css/Card.css"
+
+function Card({ img, projectName, description, buttonImage, buttonText, secondButtonImage, secondButtonText, children }: { img: string, projectName: string, description: string, buttonImage: string, buttonText: string, secondButtonImage: string, secondButtonText: string, children: React.ReactNode }) {
     return (
         <>
-            <section className='lg:flex gap-4'>
+            <section className='lg:flex gap-4' >
                 <div>
                     <img className='rounded-3xl max-w-130 min-w-130 flex place-self-center p-2' src={img} alt="" />
                 </div>
@@ -18,6 +20,28 @@ function Card({ img, projectName, description, children }: { img: string, projec
                     </div>
                     <br /><br />
                     <p className='text-amber-50 text-2x1 '>{description}</p>
+                    <br />
+                    {/**botones de info y code </> */}
+                    {/** el primero es de informacion y el segundo debe ser opcionar (por si el codigo es privado en github) */}
+                    <div className='flex gap-6 w-80'>
+                        <div className='flex'>
+                            <button
+                                className='flex items-center justify-center w-full h-full px-4 py-2 bg-amber-50 font-bold rounded-lg shadow-md hover:bg-amber-200 hover:cursor-pointer transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-amber-400'
+                            >
+                                <img className='size-8 mr-2' src={buttonImage} alt="" />
+                                <p>{buttonText}</p>
+                            </button>
+                        </div>
+
+                        <div className={secondButtonText == "" ? "hide-button" : 'flex'}>
+                            <button
+                                className='flex items-center justify-center w-full h-full px-4 py-2 bg-amber-50 font-bold rounded-lg shadow-md hover:bg-amber-200 hover:cursor-pointer transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-amber-400'
+                            >
+                                <img className='size-8 mr-2' src={secondButtonImage} alt="" />
+                                <p>{secondButtonText}</p>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </section>
         </>

@@ -1,0 +1,5 @@
+/*clase para esconder el boton secundario en la card en caso de que el codigo de github sea privado*/
+
+.hide-button {
+  display: none;
+}

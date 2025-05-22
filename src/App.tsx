@@ -4,21 +4,14 @@ import Home from './assets/Pages/Home'
 import InmoVW from './assets/Pages/InmoVW'
 import NavBar from './assets/components/NavBar'
 import BlackJack from './assets/Pages/BlackJack'
-
 function App() {
 
   return (
     <>
       <HashRouter>
-
+       
         {/**navBar */}
-        <div className="h-30 self-end mr-8 " style={{ top: "0" }}>
-          <NavBar>
-
-
-          </NavBar>
-
-        </div>
+        <div className="h-30 self-end mr-8 " style={{ top: "0" }}><NavBar></NavBar></div>
 
         <Routes>
           <Route path='/' element={<Home></Home>} ></Route>

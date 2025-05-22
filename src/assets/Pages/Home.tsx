@@ -26,7 +26,6 @@ import email from "../images/email.svg"
 import linkedin from "../images/linkedin.svg"
 import github from "../images/github.svg"
 import { useNavigate } from "react-router-dom";
-import { to } from "@react-spring/web";
 
 
 function Home() {
@@ -48,9 +47,10 @@ function Home() {
 
     return (
         <>
+           
 
 
-            <main id="home" className=" h-dvh flex flex-col gap-8">
+            <main id="home" className="h-dvh flex flex-col gap-8">
 
                 <br />
                 <br />

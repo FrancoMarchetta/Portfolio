@@ -21,6 +21,7 @@ function BlackJack() {
                 <br />
                 <br />
                 <br />
+                
 
                 <p className='fade-in text-amber-50 lg:w-210 text-2xl  place-self-center'>
                     Es un juego clásico de cartas desarrollado como aplicación web,

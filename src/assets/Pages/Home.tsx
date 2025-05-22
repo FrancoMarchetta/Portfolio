@@ -26,6 +26,7 @@ import email from "../images/email.svg"
 import linkedin from "../images/linkedin.svg"
 import github from "../images/github.svg"
 import { useNavigate } from "react-router-dom";
+import { to } from "@react-spring/web";
 
 
 function Home() {
@@ -35,6 +36,15 @@ function Home() {
     const goInfoInmoVW = () => {
         path("/InmoVW")
     }
+
+    const goInfoBlackJack = () => {
+        path("/BlackJack")
+    }
+
+    const goToCodeBlackJack = () => {
+        window.open("https://github.com/FrancoMarchetta/TheBlackestOfJacksJS", "_blank")
+    }
+
 
     return (
         <>
@@ -239,8 +249,8 @@ function Home() {
                             buttonImage={info}
                             secondButtonText="Github"
                             secondButtonImage={code}
-                            goToCode={""}
-                            goToInfo={""}
+                            goToCode={goToCodeBlackJack}
+                            goToInfo={goInfoBlackJack}
                         >
                             <div style={{ borderRadius: "8px" }} className="w-30 flex place-content-center bg-blue-700 text-amber-50 ">
                                 <img className="w-8" src={reactjs} alt="" />

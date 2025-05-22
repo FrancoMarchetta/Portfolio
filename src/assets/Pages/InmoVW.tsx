@@ -3,6 +3,7 @@ import dbmanagerimage from '../images/dbmanagerimage.png';
 
 
 function InmoVW() {
+
   const handleAnimationComplete = () => {
     console.log('Animation completed!');
   };
@@ -34,7 +35,7 @@ function InmoVW() {
         {/**separador */}
 
         <p className='fade-in text-amber-50 w-210 text-2xl place-self-center'>Tiene un gestor de propiedades para la dueña</p>
-
+      <p className='text-amber-50'>(Esta imagen solo  contiene informacion de ejemplo)</p>
         <br />
         <br />
         <br />

@@ -4,12 +4,15 @@ import Home from './assets/Pages/Home'
 import InmoVW from './assets/Pages/InmoVW'
 import NavBar from './assets/components/NavBar'
 import BlackJack from './assets/Pages/BlackJack'
+
+import SimpleParallax from "simple-parallax-js";
+
 function App() {
 
   return (
     <>
       <HashRouter>
-       
+
         {/**navBar */}
         <div className="h-30 self-end mr-8 " style={{ top: "0" }}><NavBar></NavBar></div>
 

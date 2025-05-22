@@ -21,6 +21,7 @@
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.6.0",
     "react-typing-effect": "^2.0.5",
+    "simple-parallax-js": "^6.2.1",
     "tailwindcss": "^4.1.6",
     "three": "^0.176.0"
   },

@@ -47,7 +47,7 @@ function Home() {
 
     return (
         <>
-           
+
 
 
             <main id="home" className="h-dvh flex flex-col gap-8">
@@ -62,7 +62,8 @@ function Home() {
                 <br />
                 <br />
 
-                <section    >
+
+                <section>
                     <div className=" lg:w-300 flex justify-center">
                         <SplitText
                             className="text-7xl text drop-shadow-lg"
@@ -75,17 +76,37 @@ function Home() {
                         />
                     </div>
 
-                    <div className="flex justify-center text-amber-50 text-2xl max-w-3xl lg:ml-81 mt-20 mb-20 ">
+                    <div className="fade-in flex flex-col justify-center text-amber-50 text-2xl max-w-3xl lg:ml-81 mt-20 mb-20 ">
 
-                        {/* Soy desarrollador frontend con enfoque en la creación de interfaces web modernas y responsivas. <br />
-                        Trabajo con tecnologías como React, TypeScript y CSS.
-                        <br /><br />
-                        Me interesa transformar ideas en experiencias digitales claras, funcionales y agradables. */}
-
-                        <p className="fade-in">
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam debitis quasi alias soluta quaerat dolorum? Magnam voluptatem animi vel consectetur beatae. Fugiat nam dolores mollitia assumenda ipsum incidunt nobis ad?
+                        <p>
+                            Estudiante de desarrollo de software con un enfoque en la creación de
+                            interfaces web dinámicas y adaptables. Me enfoco en convertir
+                            conceptos en soluciones digitales intuitivas.
                         </p>
+                        <br />
+
+                        <div className="flex gap-5">
+                            <button style={{ borderRadius: "10px" }} className="bg-amber-50 hover:bg-amber-200 hover:cursor-pointer duration-500 text-2xl w-50 h-12 text-black ">Descargar CV</button>
+
+                            <button
+                                onClick={() => { window.open("https://github.com/FrancoMarchetta", "_blank") }}
+                                style={{ borderRadius: "10px" }}
+                                className="bg-amber-50 flex items-center justify-center gap-2 hover:bg-amber-200 hover:cursor-pointer duration-500 text-2xl w-50 h-12 text-black"
+                            >
+                                <img src={github} alt="GitHub" className="w-10" />
+                                <p>GitHub</p>
+                            </button>
+
+
+                        </div>
+
+
+
+                        {/* <p className="fade-in">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam debitis quasi alias soluta quaerat dolorum? Magnam voluptatem animi vel consectetur beatae. Fugiat nam dolores mollitia assumenda ipsum incidunt nobis ad?
+                            </p> */}
                     </div>
+
                 </section>
 
                 <br />
@@ -298,10 +319,11 @@ function Home() {
                 {/**separador */}
 
                 <section id="contact" className=" flex gap-33 text-amber-50 lg:flex-row justify-center items-center">
-                    <div className="w-10 text-1xl text-center group">
+
+                    {/* <div className="w-10 text-1xl text-center group">
                         <img src={github} alt="" className="brightness-0 invert hover:brightness-100 hover:invert-0 transition-all duration-300" />
                         <p>GitHub</p>
-                    </div>
+                    </div> */}
 
                     <div className="w-10 text-1xl text-center group">
                         <img src={linkedin} alt="" className="brightness-0 invert hover:brightness-100 hover:invert-0 transition-all duration-300" />

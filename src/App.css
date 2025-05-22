@@ -1,9 +1,7 @@
 @import "tailwindcss";
 
 :root{
-    /* background-color: #16191D; */
-    background-image: linear-gradient(to bottom ,  #16191D, rgb(11, 75, 153)); /* Va de rojo (arriba) a azul (abajo) */
-    height: 340dvh;
+    background-color: #16191D;
     width: 100%;
 }
 

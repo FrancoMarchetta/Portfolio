@@ -5,9 +5,29 @@ function NavBar() {
     const navigate = useNavigate();
     const location = useLocation();
 
-    // Handle scroll after navigation
-    useEffect(() => {
+    const scrollToTop = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    const handleNavigation = (e: React.MouseEvent, path: string, elementId?: string) => {
+        e.preventDefault();
+
+        // Si estamos en la misma ruta, solo hacemos scroll
+        if (location.pathname === path) {
+            if (elementId) {
+                document.getElementById(elementId)?.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                scrollToTop();
+            }
+        } else {
+            // Si estamos en otra ruta, navegamos y el useEffect manejará el scroll
+            navigate(path);
+        }
+    };
+
+    // Este efecto se ejecutará cuando cambie la ruta
+    useEffect(() => {
+        scrollToTop();
     }, [location.pathname]);
 
     return (
@@ -22,32 +42,21 @@ function NavBar() {
             <Link
                 to="/"
                 className='hover:text-blue-400 duration-300'
-                onClick={(e) => {
-                    e.preventDefault();
-                    navigate("/");
-                }}
+                onClick={(e) => handleNavigation(e, "/")}
             >
                 Inicio
             </Link>
             <Link
-                to=""
+                to="/#technologies"
                 className='hover:text-blue-400 duration-300'
-                onClick={(e) => {
-                    e.preventDefault();
-                    document.getElementById('technologies')?.scrollIntoView({ behavior: 'smooth' });
-                    navigate("/#technologies")
-                }}
+                onClick={(e) => handleNavigation(e, "/", "technologies")}
             >
                 Tecnologías
             </Link>
             <Link
-                to=""
+                to="/#projects"
                 className='hover:text-blue-400 duration-300'
-                onClick={(e) => {
-                    e.preventDefault();
-                    document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
-                    navigate("/#projects")
-                }}
+                onClick={(e) => handleNavigation(e, "/", "projects")}
             >
                 Proyectos
             </Link>

@@ -1,5 +1,6 @@
 import BlurText from '../components/BlurText';
 import dbmanagerimage from '../images/dbmanagerimage.png';
+import propExample from "../images/propertysexample.png"
 
 
 function InmoVW() {
@@ -56,6 +57,7 @@ function InmoVW() {
 
         <p className='fade-in text-amber-50 lg:w-210 text-2xl place-self-center'>Tambien una zona en la que explorar las propiedades disponibles y filtrar de acuerdo a las preferencias y necesidades de cada persona</p>
 
+        <img className='lg:w-300 place-self-center' src={propExample} alt="" />
 
       </main>
     </>

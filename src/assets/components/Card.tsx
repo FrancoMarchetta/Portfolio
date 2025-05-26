@@ -1,5 +1,4 @@
 import React from 'react'
-import ejemplo from "../images/image 1.png"
 import image from "../images/github.svg"
 import "./css/Card.css"
 

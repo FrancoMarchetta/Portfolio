@@ -23,7 +23,7 @@ function BlackJack() {
                 <br />
                 
 
-                <p className='fade-in text-amber-50 lg:w-210 text-2xl  place-self-center'>
+                <p className='fade-in text-amber-50 lg:w-210 text-2xl text-justify  place-self-center'>
                     Es un juego clásico de cartas desarrollado como aplicación web,
                     donde el objetivo es vencer al crupier alcanzando 21 puntos sin pasarse.
                     El proyecto está hecho con una interfaz simple y dinámica,
@@ -37,7 +37,7 @@ function BlackJack() {
                 {/**separador */}
 
 
-                <img className='appearLeft lg:w-300 place-self-center' src={blackJackImage} alt="" />
+                <img  className='appearLeft lg:w-300 place-self-center' src={blackJackImage} alt="" />
                 
 
             </main>

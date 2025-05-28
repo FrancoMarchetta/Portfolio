@@ -1,9 +1,11 @@
-import { useEffect } from 'react'
+import { use, useEffect, useState } from 'react'
 import { useNavigate, Link, useLocation } from 'react-router-dom'
 
 function NavBar() {
     const navigate = useNavigate();
     const location = useLocation();
+
+    const [language, setLanguage]: any = useState("Español");
 
     const scrollToTop = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -29,6 +31,12 @@ function NavBar() {
     useEffect(() => {
         scrollToTop();
     }, [location.pathname]);
+
+
+    //solo verificar que el idioma funcione
+    // useEffect(() => {
+    //     console.log(language)
+    // },[language])
 
     return (
         <main
@@ -60,9 +68,9 @@ function NavBar() {
             >
                 Proyectos
             </Link>
-            <select className="hover:text-blue-400 cursor-pointer" name="" id="">
-                <option className='text-black' value="">Español</option>
-                <option className='text-black' value="">English</option>
+            <select onChange={(e) => { setLanguage(e.target.value) }} className="hover:text-blue-400 cursor-pointer" name="" id="">
+                <option className='text-black' value="Español">Español</option>
+                <option className='text-black' value="English">English</option>
             </select>
         </main>
     )

@@ -6,6 +6,7 @@ import NavBar from './assets/components/NavBar'
 import BlackJack from './assets/Pages/BlackJack'
 
 import SimpleParallax from "simple-parallax-js";
+import Starbucks from './assets/Pages/Starbucks'
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
           <Route path='/' element={<Home></Home>} ></Route>
           <Route path='/InmoVW' element={<InmoVW></InmoVW>}></Route>
           <Route path='/BlackJack' element={<BlackJack></BlackJack>}></Route>
+          <Route path='/starbucks' element={<Starbucks></Starbucks>}></Route>
         </Routes>
       </HashRouter>
 

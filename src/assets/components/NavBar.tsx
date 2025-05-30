@@ -68,10 +68,12 @@ function NavBar() {
             >
                 Proyectos
             </Link>
-            <select onChange={(e) => { setLanguage(e.target.value) }} className="hover:text-blue-400 cursor-pointer" name="" id="">
+
+            {/* <select onChange={(e) => { setLanguage(e.target.value) }} className="hover:text-blue-400 cursor-pointer" name="" id="">
                 <option className='text-black' value="Español">Español</option>
                 <option className='text-black' value="English">English</option>
             </select>
+             */}
         </main>
     )
 }

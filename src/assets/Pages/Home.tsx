@@ -1,10 +1,11 @@
 import Card from "../components/Card"
 import "../Animations.css"
 import SplitText from "../components/SplitText"
-
+import cv from "/Franco Marchetta.pdf"
 //project assets
 import blackjack from "../images/blackjack.png";
 import inmovw from "../images/inmovw.png";
+import starbucks from "../images/starbucks1.png";
 
 import code from "../images/code.svg"
 import info from "../images/info.svg"
@@ -21,6 +22,7 @@ import supabase from "../images/supabase.png"
 import reactjs from "../images/react.png"
 import sql from "../images/sql.png"
 import electron from "../images/electron.png"
+import astro from "../images/astro.png"
 //contact
 import email from "../images/email.svg"
 import linkedin from "../images/linkedin.svg"
@@ -44,6 +46,14 @@ function Home() {
         window.open("https://github.com/FrancoMarchetta/TheBlackestOfJacksJS", "_blank")
     }
 
+    const goToCodeStarbucks = () => {
+        window.open("https://github.com/FrancoMarchetta/cafe-demo-Astro", "_blank")
+    }
+
+    const goInfoBlackStarbucks = () => {
+        path("/Starbucks")
+    }
+
 
     return (
         <>
@@ -51,16 +61,6 @@ function Home() {
 
 
             <main id="home" className="h-dvh flex flex-col gap-8">
-
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
 
 
                 <section>
@@ -75,37 +75,38 @@ function Home() {
                             rootMargin="-50px"
                         />
                     </div>
-
                     <div className="fade-in flex flex-col justify-center text-amber-50 text-2xl max-w-3xl lg:ml-81 mt-20 mb-20 ">
-
                         <p>
-                            Estudiante de desarrollo de software con un enfoque en la creación de
-                            interfaces web dinámicas y adaptables. Me enfoco en convertir
-                            conceptos en soluciones digitales intuitivas.
+                            Estudiante de Desarrollo de Software con enfoque en la creación de interfaces web dinámicas y adaptables. Me enfoco en convertir conceptos en soluciones digitales intuitivas. Valoro el trabajo en equipo, la comunicación clara y la disposición para aprender continuamente, lo que me permite adaptarme con facilidad a nuevos entornos y desafíos.
                         </p>
                         <br />
 
                         <div className="flex gap-5">
-                            <button style={{ borderRadius: "10px" }} className="bg-amber-50 hover:bg-amber-200 hover:cursor-pointer duration-500 text-2xl w-50 h-12 text-black ">Descargar CV</button>
+                            <button style={{ borderRadius: "10px" }} className="bg-amber-50 hover:bg-amber-200 hover:cursor-pointer duration-500 text-2xl w-50 h-12 text-black ">
+                                <a href={cv} download={"FrancoMarchetta.pdf"}>
+                                    Descargar CV
+                                </a>
 
-                            <button
-                                onClick={() => { window.open("https://github.com/FrancoMarchetta", "_blank") }}
-                                style={{ borderRadius: "10px" }}
-                                className="bg-amber-50 flex items-center justify-center gap-2 hover:bg-amber-200 hover:cursor-pointer duration-500 text-2xl w-50 h-12 text-black"
-                            >
-                                <img src={github} alt="GitHub" className="w-10" />
-                                <p>GitHub</p>
                             </button>
+                            <br />
 
 
+                            <div className=" flex rounded w-90 justify-center items-center gap-2  text-amber-50 hover:cursor-pointer duration-500">
+                                <img src={email} alt="" className="lg:w-13 brightness-0 invert  hover:cursor-pointer " />
+                                <p>frncmarchetta@gmail.com</p>
+                            </div>
+                        </div>
+                        <div className="flex gap-5 ml-10 mt-5">
+                            <img onClick={() => window.open("https://github.com/FrancoMarchetta", "blank_")} src={github} alt="GitHub" className="lg:w-12 brightness-0 invert  hover:cursor-pointer" />
+
+                            <img onClick={() => window.open("https://www.linkedin.com/in/franco-marchetta-a37195254/", "blank_")} src={linkedin} alt="" className="lg:w-10 brightness-0 invert hover:cursor-pointer" />
                         </div>
 
+                    </div>
 
-
-                        {/* <p className="fade-in">
+                    {/* <p className="fade-in">
                             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam debitis quasi alias soluta quaerat dolorum? Magnam voluptatem animi vel consectetur beatae. Fugiat nam dolores mollitia assumenda ipsum incidunt nobis ad?
                             </p> */}
-                    </div>
 
                 </section>
 
@@ -301,9 +302,39 @@ function Home() {
                     <br />
                     <br />
 
+
                     <div>
-                        {/* <Card></Card> */}
+                        <Card
+                            img={starbucks}
+                            projectName="Clon de Starbucks"
+                            description="Clon no oficial de la página web de Starbucks, creado únicamente con fines educativos y de práctica personal."
+                            buttonText="info"
+                            buttonImage={info}
+                            secondButtonText="Github"
+                            secondButtonImage={code}
+                            goToCode={goToCodeStarbucks}
+                            goToInfo={goInfoBlackStarbucks}
+                        >
+                            <div style={{ borderRadius: "8px" }} className="w-30 flex place-content-center bg-orange-600 text-amber-50 ">
+                                <img className="w-8 mt-0.5" src={astro} alt="" />
+                                <p className="mt-0.5">Astro</p>
+                            </div>
+
+                            <div style={{ borderRadius: "8px" }} className="w-30 flex place-content-center bg-blue-950 text-amber-50 ">
+                                <img className="w-8" src={tailwind} alt="" />
+                                <p className="mt-0.5">Tailwind</p>
+                            </div>
+
+                            <div style={{ borderRadius: "8px" }} className="w-30 flex place-content-center bg-blue-700 text-amber-50 ">
+                                <img className="w-8" src={css} alt="" />
+                                <p className="mt-0.5">Css</p>
+                            </div>
+
+
+
+                        </Card>
                     </div>
+
 
                 </section>
 

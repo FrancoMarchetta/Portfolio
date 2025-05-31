@@ -28,6 +28,7 @@ import email from "../images/email.svg"
 import linkedin from "../images/linkedin.svg"
 import github from "../images/github.svg"
 import { useNavigate } from "react-router-dom";
+import Contact from "../components/Contact";
 
 
 function Home() {
@@ -82,25 +83,17 @@ function Home() {
                         <br />
 
                         <div className="flex gap-5">
-                            <button style={{ borderRadius: "10px" }} className="bg-amber-50 hover:bg-amber-200 hover:cursor-pointer duration-500 text-2xl w-50 h-12 text-black ">
+                            <button style={{ borderRadius: "10px" }} className="bg-amber-50 hover:bg-amber-200 hover:cursor-pointer hover:-translate-y-2  duration-200 text-2xl lg:w-50 h-12 text-black ">
                                 <a href={cv} download={"FrancoMarchetta.pdf"}>
                                     Descargar CV
                                 </a>
 
                             </button>
                             <br />
-
-
-                            <div className=" flex rounded w-90 justify-center items-center gap-2  text-amber-50 hover:cursor-pointer duration-500">
-                                <img src={email} alt="" className="lg:w-13 brightness-0 invert  hover:cursor-pointer " />
-                                <p>frncmarchetta@gmail.com</p>
-                            </div>
                         </div>
-                        <div className="flex gap-5 ml-10 mt-5">
-                            <img onClick={() => window.open("https://github.com/FrancoMarchetta", "blank_")} src={github} alt="GitHub" className="lg:w-12 brightness-0 invert  hover:cursor-pointer" />
 
-                            <img onClick={() => window.open("https://www.linkedin.com/in/franco-marchetta-a37195254/", "blank_")} src={linkedin} alt="" className="lg:w-10 brightness-0 invert hover:cursor-pointer" />
-                        </div>
+
+
 
                     </div>
 
@@ -351,21 +344,27 @@ function Home() {
 
                 <section id="contact" className=" flex gap-33 text-amber-50 lg:flex-row justify-center items-center">
 
-                    {/* <div className="w-10 text-1xl text-center group">
-                        <img src={github} alt="" className="brightness-0 invert hover:brightness-100 hover:invert-0 transition-all duration-300" />
-                        <p>GitHub</p>
-                    </div> */}
+                    <div className="flex flex-col gap-5  mt-5">
 
-                    <div className="w-10 text-1xl text-center group">
-                        <img src={linkedin} alt="" className="brightness-0 invert hover:brightness-100 hover:invert-0 transition-all duration-300" />
-                        <p>LinkedIn</p>
-                    </div>
+                        <div>
+                            <Contact></Contact>
+                        </div>
 
-                    <div className="w-10 text-1xl text-center group">
-                        <img src={email} alt="" className="brightness-0 invert hover:brightness-100 hover:invert-0 duration-300" />
-                        <p>Email</p>
+                        <div className="flex place-content-center gap-10 ">
+                            <div onClick={() => window.open("https://github.com/FrancoMarchetta", "blank_")} className="flex justify-center items-center cursor-pointer">
+                                <img src={github} alt="GitHub" className="lg:w-12 brightness-0 invert  hover:cursor-pointer" />
+                                <p>GitHub</p>
+                            </div>
+                            <div onClick={() => window.open("https://www.linkedin.com/in/franco-marchetta-a37195254/", "blank_")} className="flex justify-center items-center cursor-pointer">
+                                <img src={linkedin} alt="" className="lg:w-10 brightness-0 invert hover:cursor-pointer" />
+                                <p>Linkedin</p>
+                            </div>
+                        </div>
                     </div>
                 </section>
+
+                <br />
+
 
 
             </main >

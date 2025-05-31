@@ -69,6 +69,14 @@ function NavBar() {
                 Proyectos
             </Link>
 
+            <Link
+                to="/#contact"
+                className='hover:text-blue-400 duration-300'
+                onClick={(e) => handleNavigation(e, "/", "contact")}
+            >
+                Contacto
+            </Link>
+
             {/* <select onChange={(e) => { setLanguage(e.target.value) }} className="hover:text-blue-400 cursor-pointer" name="" id="">
                 <option className='text-black' value="Español">Español</option>
                 <option className='text-black' value="English">English</option>

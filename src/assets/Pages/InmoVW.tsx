@@ -44,7 +44,7 @@ function InmoVW() {
         </section>
         {/**separador */}
 
-        <p className='fade-in w-210 place-self-center text-2xl text-amber-50'>Tiene un gestor de propiedades para el cliente</p>
+        <p className='fade-in w-210 place-self-center text-2xl text-amber-50'>Tiene panel de control de las propiedades para poder gestionarlas</p>
         <p className='text-amber-50'>(Esta imagen solo  contiene informacion de ejemplo)</p>
         <br />
         <br />

@@ -225,7 +225,7 @@ function Home() {
                         <Card
                             img={inmovw}
                             projectName="Inmovw"
-                            description="Aplicación web para la gestión de propiedades inmobiliarias. Desarrollada con React, CSS y Supabase. Permite a los usuarios buscar y filtrar propiedades mientras ."
+                            description=" Aplicación web desarrollada con React, TypeScript, CSS y Supabase, diseñada para gestionar propiedades inmobiliarias. La plataforma permite a los usuarios buscar y filtrar propiedades de forma sencilla, visualizando las mejores opciones disponibles en su zona."
                             buttonText="Info"
                             buttonImage={info}
                             secondButtonText=""

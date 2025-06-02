@@ -6,6 +6,7 @@ import cv from "/Franco Marchetta.pdf"
 import blackjack from "../images/blackjack.png";
 import inmovw from "../images/inmovw.png";
 import starbucks from "../images/starbucks1.png";
+import passwordGenerator from "../images/passwordGenerator.png";
 
 import code from "../images/code.svg"
 import info from "../images/info.svg"
@@ -55,6 +56,15 @@ function Home() {
         path("/Starbucks")
     }
 
+    const goToCodePasswordGenerator = () => {
+        window.open("https://github.com/FrancoMarchetta/PasswordGenerator", "_blank")
+    }
+
+    const goToInfoPasswordGenerator = () => {
+        window.open("https://password-generator-eta-khaki.vercel.app/", "_blank")
+
+    }
+
 
     return (
         <>
@@ -78,7 +88,7 @@ function Home() {
                     </div>
                     <div className="fade-in flex flex-col justify-center text-amber-50 text-2xl max-w-3xl lg:ml-81 mt-20 mb-20 ">
                         <p>
-                            Estudiante de Desarrollo de Software con enfoque en la creación de interfaces web dinámicas y adaptables. Me enfoco en convertir conceptos en soluciones digitales intuitivas. Valoro el trabajo en equipo, la comunicación clara y la disposición para aprender continuamente, lo que me permite adaptarme con facilidad a nuevos entornos y desafíos.
+                            Estudiante de Desarrollo de Software con enfoque en la creación de interfaces web dinámicas y adaptables. Me enfoco en construir soluciones digitales intuitivas. Valoro el trabajo en equipo, la comunicación clara y la disposición para aprender continuamente, lo que me permite adaptarme con facilidad a nuevos entornos y desafíos.
                         </p>
                         <br />
 
@@ -329,6 +339,41 @@ function Home() {
                     </div>
 
 
+                    <br />
+                    <br />
+                    <br />
+
+
+                    <div>
+                        <Card
+                            img={passwordGenerator}
+                            projectName="Generador de contraseñas"
+                            description="Aplicacion simple para crear contraseñas aleatorias seguras."
+                            buttonText="info"
+                            buttonImage={info}
+                            secondButtonText="Github"
+                            secondButtonImage={code}
+                            goToCode={goToCodePasswordGenerator}
+                            goToInfo={goToInfoPasswordGenerator}
+                        >
+
+                            <div style={{ borderRadius: "8px" }} className="w-30 flex place-content-center bg-blue-950 text-amber-50 ">
+                                <img className="w-6 h-6 place-self-center" src={ts} alt="" />
+                                <p className="mt-0.5">Typescript</p>
+                            </div>
+
+
+                            <div style={{ borderRadius: "8px" }} className="w-30 flex place-content-center bg-blue-700 text-amber-50 ">
+                                <img className="w-8" src={css} alt="" />
+                                <p className="mt-0.5">Css</p>
+                            </div>
+
+
+
+                        </Card>
+                    </div>
+
+
                 </section>
 
 
@@ -351,11 +396,11 @@ function Home() {
                         </div>
 
                         <div className="flex place-content-center gap-10 ">
-                            <div onClick={() => window.open("https://github.com/FrancoMarchetta", "blank_")} className="flex justify-center items-center cursor-pointer">
+                            <div onClick={() => window.open("https://github.com/FrancoMarchetta", "blank_")} className="flex justify-center items-center hover:text-blue-500 duration-200   cursor-pointer ">
                                 <img src={github} alt="GitHub" className="lg:w-12 brightness-0 invert  hover:cursor-pointer" />
                                 <p>GitHub</p>
                             </div>
-                            <div onClick={() => window.open("https://www.linkedin.com/in/franco-marchetta-a37195254/", "blank_")} className="flex justify-center items-center cursor-pointer">
+                            <div onClick={() => window.open("https://www.linkedin.com/in/franco-marchetta-a37195254/", "blank_")} className="flex  hover:text-blue-500 duration-200  justify-center items-center cursor-pointer ">
                                 <img src={linkedin} alt="" className="lg:w-10 brightness-0 invert hover:cursor-pointer" />
                                 <p>Linkedin</p>
                             </div>

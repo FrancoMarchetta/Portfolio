@@ -5,7 +5,6 @@ import InmoVW from './assets/Pages/InmoVW'
 import NavBar from './assets/components/NavBar'
 import BlackJack from './assets/Pages/BlackJack'
 
-import SimpleParallax from "simple-parallax-js";
 import Starbucks from './assets/Pages/Starbucks'
 
 function App() {

@@ -1,11 +1,9 @@
-import { use, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate, Link, useLocation } from 'react-router-dom'
 
 function NavBar() {
     const navigate = useNavigate();
     const location = useLocation();
-
-    const [language, setLanguage]: any = useState("Español");
 
     const scrollToTop = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });

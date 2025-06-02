@@ -1,4 +1,3 @@
-import React from 'react'
 import BlurText from '../components/BlurText'
 import starbucksImage from "../images/starbucks1.png"
 import starbucksImage2 from "../images/starbucks2.png"

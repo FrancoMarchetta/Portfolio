@@ -1,6 +1,5 @@
 import BlurText from '../components/BlurText'
 import blackJackImage from "../images/blackjack.png"
-import info from "../images/info.svg"
 import code from "../images/code.svg"
 
 

@@ -1,5 +1,4 @@
 import React from 'react'
-import image from "../images/github.svg"
 import "./css/Card.css"
 
 function Card({ img, projectName, goToInfo, goToCode, description, buttonImage, buttonText, secondButtonImage, secondButtonText, children }: { img: string, projectName: string, description: string, goToInfo: any, goToCode: any, buttonImage: string, buttonText: string, secondButtonImage: string, secondButtonText: string, children: React.ReactNode }) {

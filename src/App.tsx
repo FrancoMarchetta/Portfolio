@@ -13,7 +13,7 @@ function App() {
       <HashRouter>
 
         {/**navBar */}
-        <div className="h-30 lg:self-end sm:self-center border sm:mr-50 lg:mr-8 " style={{ top: "0" }}><NavBar></NavBar></div>
+        <div className="h-30 lg:self-end md:self-center sm:self-center lg:mr-8 " style={{ top: "0" }}><NavBar></NavBar></div>
 
         <Routes>
           <Route path='/' element={<Home></Home>} ></Route>

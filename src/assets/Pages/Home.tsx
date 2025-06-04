@@ -85,7 +85,7 @@ function Home() {
                             rootMargin="-50px"
                         />
                     </div>
-                    <div className="fade-in flex flex-col justify-center text-amber-50 text-2xl max-w-3xl lg:ml-81 mt-20 mb-20 ">
+                    <div className="p-4 fade-in flex flex-col justify-center text-amber-50 text-2xl max-w-3xl lg:ml-81 mt-20 mb-20 ">
                         <p>
                             Estudiante de Desarrollo de Software con enfoque en la creación de interfaces web dinámicas y adaptables. Me enfoco en construir soluciones digitales intuitivas. Valoro el trabajo en equipo, la comunicación clara y la disposición para aprender continuamente, lo que me permite adaptarme con facilidad a nuevos entornos y desafíos.
                         </p>
@@ -143,7 +143,10 @@ function Home() {
 
                 <section id="technologies">
 
-                    <div id="technologies-container" className="text-amber-50 w-200 flex place-self-center flex-wrap flex-col lg:flex-row gap-10 justify-center items-center">
+                    <div
+                        id="technologies-container"
+                        className="text-amber-50 w-full max-w-5xl mx-auto flex flex-wrap gap-10 justify-center items-center"
+                    >
                         <div className="flex flex-col items-center">
                             <img className="w-20 h-20" src={js} alt="Javascript" />
                             <p>Javascript</p>
@@ -218,6 +221,11 @@ function Home() {
 
 
 
+                {/**Esto es absolutamente imposible de volver responsive.
+                * Intenter bajo tu propio riesgo.
+                * Horas perdidas en esto: [6]
+                */}
+
                 <section className="w-250 flex-wrap place-self-center  gap-10 justify-center items-center">
 
                     <div>
@@ -232,7 +240,7 @@ function Home() {
                             goToInfo={goInfoInmoVW}
                             goToCode={""}
                         >
-                            <div className="flex gap-4 w-fit">
+                            <div className="flex gap-4 lg:w-fit">
 
                                 <div style={{ borderRadius: "8px" }} className="w-30 flex place-content-center bg-blue-700 text-amber-50 ">
                                     <img className="w-8" src={reactjs} alt="" />
@@ -386,21 +394,35 @@ function Home() {
                 </section>
                 {/**separador */}
 
-                <section id="contact" className=" flex gap-33 text-amber-50 lg:flex-row justify-center items-center">
-
-                    <div className="flex flex-col gap-5  mt-5">
-
+                <section
+                    id="contact"
+                    className="flex flex-col lg:flex-row gap-10 text-amber-50 justify-center items-center px-4 w-full"
+                >
+                    <div className="flex flex-col gap-5 mt-5 w-full max-w-md">
                         <div>
-                            <Contact></Contact>
+                            <Contact />
                         </div>
-
-                        <div className="flex place-content-center gap-10 ">
-                            <div onClick={() => window.open("https://github.com/FrancoMarchetta", "blank_")} className="flex justify-center items-center hover:text-blue-500 duration-200   cursor-pointer ">
-                                <img src={github} alt="GitHub" className="lg:w-12 brightness-0 invert  hover:cursor-pointer" />
+                        <div className="flex justify-center ml-30  gap-10 flex-wrap">
+                            <div
+                                onClick={() => window.open("https://github.com/FrancoMarchetta", "_blank")}
+                                className="flex items-center hover:text-blue-500 duration-200 cursor-pointer gap-2"
+                            >
+                                <img
+                                    src={github}
+                                    alt="GitHub"
+                                    className="w-8 lg:w-12 brightness-0 invert hover:cursor-pointer"
+                                />
                                 <p>GitHub</p>
                             </div>
-                            <div onClick={() => window.open("https://www.linkedin.com/in/franco-marchetta-a37195254/", "blank_")} className="flex  hover:text-blue-500 duration-200  justify-center items-center cursor-pointer ">
-                                <img src={linkedin} alt="" className="lg:w-10 brightness-0 invert hover:cursor-pointer" />
+                            <div
+                                onClick={() => window.open("https://www.linkedin.com/in/franco-marchetta-a37195254/", "_blank")}
+                                className="flex items-center hover:text-blue-500 duration-200 cursor-pointer gap-2"
+                            >
+                                <img
+                                    src={linkedin}
+                                    alt="Linkedin"
+                                    className="w-8 lg:w-10 brightness-0 invert hover:cursor-pointer"
+                                />
                                 <p>Linkedin</p>
                             </div>
                         </div>

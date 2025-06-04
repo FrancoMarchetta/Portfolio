@@ -29,7 +29,7 @@ function InmoVW() {
         <br />
         <br />
 
-        <p className='fade-in lg:w-210 text-justify place-self-center text-2xl text-amber-50'>
+        <p className='fade-in p-4 lg:w-210 text-justify place-self-center text-2xl text-amber-50'>
           Creé una web para una inmobiliaria, donde los usuarios pueden explorar propiedades.
           Tiene un sistema de filtrado y cada publicación incluye imágenes y todos los detalles necesarios
           para ayudar a tomar decisiones. Usé React para construir la interfaz y Supabase como backend para manejar los
@@ -44,7 +44,7 @@ function InmoVW() {
         </section>
         {/**separador */}
 
-        <p className='fade-in w-210 place-self-center text-2xl text-amber-50'>Tiene panel de control de las propiedades para poder gestionarlas</p>
+        <p className='fade-in p-4 lg:w-210 place-self-center text-2xl text-amber-50'>Tiene panel de control de las propiedades para poder gestionarlas</p>
         <p className='text-amber-50'>(Esta imagen solo  contiene informacion de ejemplo)</p>
         <br />
         <br />
@@ -64,7 +64,7 @@ function InmoVW() {
 
 
 
-        <p className=' lg:w-210 place-self-center text-2xl text-amber-50'>Tambien una zona en la que explorar las propiedades disponibles y filtrar de acuerdo a las preferencias y necesidades de cada persona</p>
+        <p className=' lg:w-210 p-4 place-self-center text-2xl text-amber-50'>Tambien una zona en la que explorar las propiedades disponibles y filtrar de acuerdo a las preferencias y necesidades de cada persona</p>
 
         <img className='lg:w-300 place-self-center' src={propExample} alt="" />
 
@@ -76,14 +76,13 @@ function InmoVW() {
         {/**separador */}
         <p className='lg:w-210 place-self-center text-2xl text-amber-50'>Es totalmente responsiva y se adapta a pantallas mas pequeñas</p>
 
-        <div className='flex place-self-center gap-32 '>
+        <div className='flex flex-wrap place-self-center gap-32 '>
           <img className='lg:w-140' src={smallExample} alt="" />
           <img className='lg:w-140' src={smallExample2} alt="" />
         </div>
         <br />
         <br />
         <br />
-
         <button style={{ borderRadius: "10px" }} className='hover:cursor-pointer text-2xl text-black border-2 w-50 h-20 bg-amber-50 flex items-center place-self-center justify-center gap-2'>
           <img src={info} alt="info" className="w-10 h-10" />
           Ir a ver

@@ -25,7 +25,6 @@ import sql from "../images/sql.png"
 import electron from "../images/electron.png"
 import astro from "../images/astro.png"
 //contact
-import email from "../images/email.svg"
 import linkedin from "../images/linkedin.svg"
 import github from "../images/github.svg"
 import { useNavigate } from "react-router-dom";

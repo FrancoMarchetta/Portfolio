@@ -1,9 +1,10 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate, Link, useLocation } from 'react-router-dom'
 
 function NavBar() {
     const navigate = useNavigate();
     const location = useLocation();
+    const [menuOpen, setMenuOpen] = useState(false);
 
     const scrollToTop = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -12,7 +13,6 @@ function NavBar() {
     const handleNavigation = (e: React.MouseEvent, path: string, elementId?: string) => {
         e.preventDefault();
 
-        // Si estamos en la misma ruta, solo hacemos scroll
         if (location.pathname === path) {
             if (elementId) {
                 document.getElementById(elementId)?.scrollIntoView({ behavior: 'smooth' });
@@ -20,67 +20,89 @@ function NavBar() {
                 scrollToTop();
             }
         } else {
-            // Si estamos en otra ruta, navegamos y el useEffect manejará el scroll
             navigate(path);
         }
+        setMenuOpen(false); // Close menu on navigation (for mobile)
     };
 
-    // Este efecto se ejecutará cuando cambie la ruta
     useEffect(() => {
         scrollToTop();
     }, [location.pathname]);
 
-
-    //solo verificar que el idioma funcione
-    // useEffect(() => {
-    //     console.log(language)
-    // },[language])
+    // Close menu on window resize if desktop
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth >= 768) setMenuOpen(false);
+        };
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     return (
-        <main
+        <nav
             id='nav-bar'
-            className='fixed z-50 lg:w-150 h-15 justify-center place-items-center text-amber-50 flex gap-10 font-bold text-lg bg-black/80 backdrop-blur-sm px-4 py-2 rounded-lg'
-            style={{
-                top: '20px',
-                right: '40px'
-            }}
+            className='fixed z-50 top-5 right-10'
         >
-            <Link
-                to="/"
-                className='hover:text-blue-400 duration-300'
-                onClick={(e) => handleNavigation(e, "/")}
+            {/* Hamburger Button */}
+            <button
+                className="md:hidden flex flex-col justify-center items-center w-10 h-10 bg-black/80 rounded-lg"
+                aria-label="Toggle menu"
+                onClick={() => setMenuOpen((open) => !open)}
             >
-                Inicio
-            </Link>
-            <Link
-                to="/#technologies"
-                className='hover:text-blue-400 duration-300'
-                onClick={(e) => handleNavigation(e, "/", "technologies")}
-            >
-                Tecnologías
-            </Link>
-            <Link
-                to="/#projects"
-                className='hover:text-blue-400 duration-300'
-                onClick={(e) => handleNavigation(e, "/", "projects")}
-            >
-                Proyectos
-            </Link>
+                <span className={`block h-1 w-6 bg-amber-50 rounded transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+                <span className={`block h-1 w-6 bg-amber-50 rounded my-1 transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`}></span>
+                <span className={`block h-1 w-6 bg-amber-50 rounded transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+            </button>
 
-            <Link
-                to="/#contact"
-                className='hover:text-blue-400 duration-300'
-                onClick={(e) => handleNavigation(e, "/", "contact")}
+            {/* Menu */}
+            <main
+                className={`
+                    ${menuOpen ? 'flex' : 'hidden'}
+                    md:flex
+                    flex-col md:flex-row
+                    gap-6 md:gap-10
+                    font-bold text-lg
+                    bg-black/90 md:bg-black/80
+                    backdrop-blur-sm
+                    px-6 py-4 md:px-4 md:py-2
+                    rounded-lg
+                    text-amber-50
+                    absolute md:static
+                    top-14 right-0 md:top-0 md:right-0
+                    shadow-lg md:shadow-none
+                    transition-all duration-300
+                `}
             >
-                Contacto
-            </Link>
-
-            {/* <select onChange={(e) => { setLanguage(e.target.value) }} className="hover:text-blue-400 cursor-pointer" name="" id="">
-                <option className='text-black' value="Español">Español</option>
-                <option className='text-black' value="English">English</option>
-            </select>
-             */}
-        </main>
+                <Link
+                    to="/"
+                    className='hover:text-blue-400 duration-300'
+                    onClick={(e) => handleNavigation(e, "/")}
+                >
+                    Inicio
+                </Link>
+                <Link
+                    to="/#technologies"
+                    className='hover:text-blue-400 duration-300'
+                    onClick={(e) => handleNavigation(e, "/", "technologies")}
+                >
+                    Tecnologías
+                </Link>
+                <Link
+                    to="/#projects"
+                    className='hover:text-blue-400 duration-300'
+                    onClick={(e) => handleNavigation(e, "/", "projects")}
+                >
+                    Proyectos
+                </Link>
+                <Link
+                    to="/#contact"
+                    className='hover:text-blue-400 duration-300'
+                    onClick={(e) => handleNavigation(e, "/", "contact")}
+                >
+                    Contacto
+                </Link>
+            </main>
+        </nav>
     )
 }
 

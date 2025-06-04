@@ -221,10 +221,11 @@ function Home() {
 
 
 
-                        {/**Esto es absolutamente imposible de volver responsive.
-                         * Intenter bajo tu propio riesgo.
-                         * Horas perdidas en esto: [6]
-                         */}
+                {/**Esto es absolutamente imposible de volver responsive.
+                * Intenter bajo tu propio riesgo.
+                * Horas perdidas en esto: [6]
+                */}
+
                 <section className="w-250 flex-wrap place-self-center  gap-10 justify-center items-center">
 
                     <div>

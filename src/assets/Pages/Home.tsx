@@ -402,7 +402,7 @@ function Home() {
                         <div>
                             <Contact />
                         </div>
-                        <div className="flex justify-center ml-30  gap-10 flex-wrap">
+                        <div className="flex justify-center ml-16  gap-10 flex-wrap">
                             <div
                                 onClick={() => window.open("https://github.com/FrancoMarchetta", "_blank")}
                                 className="flex items-center hover:text-blue-500 duration-200 cursor-pointer gap-2"

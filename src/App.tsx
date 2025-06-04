@@ -4,7 +4,6 @@ import Home from './assets/Pages/Home'
 import InmoVW from './assets/Pages/InmoVW'
 import NavBar from './assets/components/NavBar'
 import BlackJack from './assets/Pages/BlackJack'
-
 import Starbucks from './assets/Pages/Starbucks'
 
 function App() {
@@ -14,7 +13,7 @@ function App() {
       <HashRouter>
 
         {/**navBar */}
-        <div className="h-30 lg:self-end sm:self-center sm:mr-0 lg:mr-8 " style={{ top: "0" }}><NavBar></NavBar></div>
+        <div className="h-30 lg:self-end sm:self-center border sm:mr-50 lg:mr-8 " style={{ top: "0" }}><NavBar></NavBar></div>
 
         <Routes>
           <Route path='/' element={<Home></Home>} ></Route>

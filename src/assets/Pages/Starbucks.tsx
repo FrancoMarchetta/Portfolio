@@ -1,4 +1,3 @@
-import React from 'react'
 import BlurText from '../components/BlurText'
 import starbucksImage from "../images/starbucks1.png"
 import starbucksImage2 from "../images/starbucks2.png"
@@ -26,7 +25,7 @@ function Starbucks() {
                 <br />
 
 
-                <p className='fade-in text-amber-50 lg:w-210 text-2xl text-justify  place-self-center'>
+                <p className='fade-in text-amber-50 lg:w-210 text-2xl text-justify  place-self-center p-4'>
                     Clon no oficial de la página web de Starbucks, creado únicamente con fines educativos y de práctica personal.</p>
 
                 {/**separador */}
@@ -37,7 +36,7 @@ function Starbucks() {
                 {/**separador */}
 
 
-                <img className='appearLeft lg:w-300 place-self-center' src={starbucksImage} alt="" />
+                <img className='appearLeft lg:w-300 place-self-center p-4' src={starbucksImage} alt="" />
 
                 <br />
                 <br />
@@ -50,7 +49,7 @@ function Starbucks() {
                 </section>
                 {/**separador */}
 
-                <img className='lg:w-300 place-self-center' src={starbucksImage2} alt="" />
+                <img className='lg:w-300 p-4 place-self-center' src={starbucksImage2} alt="" />
                 <br />
                 <button onClick={() => {
                     window.open("https://github.com/FrancoMarchetta/cafe-demo-Astro", "_blank")

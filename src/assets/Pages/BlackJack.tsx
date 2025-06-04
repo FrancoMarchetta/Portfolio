@@ -1,6 +1,5 @@
 import BlurText from '../components/BlurText'
 import blackJackImage from "../images/blackjack.png"
-import info from "../images/info.svg"
 import code from "../images/code.svg"
 
 
@@ -27,7 +26,7 @@ function BlackJack() {
                 <br />
 
 
-                <p className='fade-in text-amber-50 lg:w-210 text-2xl text-justify  place-self-center'>
+                <p className='fade-in p-4 text-amber-50 lg:w-210 text-2xl text-justify  place-self-center'>
                     Es un juego clásico de cartas desarrollado como aplicación web,
                     donde el objetivo es vencer al crupier alcanzando 21 puntos sin pasarse.
                     El proyecto está hecho con una interfaz simple y dinámica,
@@ -41,7 +40,7 @@ function BlackJack() {
                 {/**separador */}
 
 
-                <img className='appearLeft lg:w-250 place-self-center' src={blackJackImage} alt="" />
+                <img className='p-4 appearLeft lg:w-250 place-self-center' src={blackJackImage} alt="" />
                 <button onClick={() => {
                     window.open("https://github.com/FrancoMarchetta/TheBlackestOfJacksJS", "_blank")
                 }} style={{ borderRadius: "10px" }} className='hover:cursor-pointer text-2xl text-black border-2 w-50 h-20 bg-amber-50 flex items-center place-self-center justify-center gap-2'>

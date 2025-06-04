@@ -7,7 +7,7 @@ function Card({ img, projectName, goToInfo, goToCode, description, buttonImage, 
         <>
             <section className='lg:flex gap-4' >
                 <div>
-                    <img className='rounded-3xl max-w-130 min-w-130 flex place-self-center p-2' src={img} alt="" />
+                    <img className='rounded-3xl max-w-130 min-w-120 flex place-self-center p-3' src={img} alt="" />
                 </div>
 
                 <div>

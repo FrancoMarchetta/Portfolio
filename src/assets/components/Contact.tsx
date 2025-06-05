@@ -13,7 +13,7 @@ function Contact() {
     const sendButtonRef = useRef<HTMLButtonElement>(null);
     const [isVisible, setIsVisible] = useState<boolean>(false);
 
-    const [language, setLanguage] = useAtom(atomLanguage);
+    const [language,] = useAtom(atomLanguage);
 
     const sendEmail = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();

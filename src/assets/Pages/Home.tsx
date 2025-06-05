@@ -32,13 +32,16 @@ import Contact from "../components/Contact";
 import { atom, useAtom } from "jotai";
 
 import { atomLanguage } from '../components/NavBar';
+import { useEffect } from "react";
+
+
 
 
 function Home() {
     //si se deja el secondButtonText vacio, no se renderiza el boton. Epica solucion de mi parte
     const path = useNavigate();
 
-    const [language, setLanguage] = useAtom(atomLanguage)
+    const [language,] = useAtom(atomLanguage)
 
     const goInfoInmoVW = () => {
         path("/InmoVW")
@@ -450,3 +453,9 @@ function Home() {
 }
 
 export default Home
+
+//arregla la poronga de error por no haber leido o usado "atom" en el deploy 
+useEffect(() => {
+    console.log(atom,);
+
+})

@@ -35,7 +35,11 @@ import { atomLanguage } from '../components/NavBar';
 import { useEffect } from "react";
 
 
+//arregla la poronga de error por no haber leido o usado "atom" en el deploy 
+useEffect(() => {
+    console.log(atom,);
 
+})
 
 function Home() {
     //si se deja el secondButtonText vacio, no se renderiza el boton. Epica solucion de mi parte
@@ -454,8 +458,3 @@ function Home() {
 
 export default Home
 
-//arregla la poronga de error por no haber leido o usado "atom" en el deploy 
-useEffect(() => {
-    console.log(atom,);
-
-})

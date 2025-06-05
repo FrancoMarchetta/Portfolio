@@ -157,51 +157,52 @@ function Home() {
 
                 <section id="technologies">
 
-                    <div id="technologies-container" className="text-amber-50 w-200 flex place-self-center flex-wrap flex-col lg:flex-row gap-10 justify-center items-center">
-                        <div className="flex flex-col items-center">
-                            <img className="w-20 h-20" src={js} alt="Javascript" />
-                            <p>{language == "Español" ? "Javascript" : "Javascript"}</p>
+                    <div
+                        id="technologies-container"
+                        className="text-amber-50 w-full max-w-5xl mx-auto flex flex-wrap gap-8 justify-center items-center"
+                    >
+                        <div className="flex flex-col items-center w-24">
+                            <img className="w-16 h-16" src={js} alt="Javascript" />
+                            <p>Javascript</p>
                         </div>
-                        <div className="flex flex-col items-center">
-                            <img className="w-20 h-20" src={reactjs} alt="React" />
-                            <p>{language == "Español" ? "React" : "React"}</p>
+                        <div className="flex flex-col items-center w-24">
+                            <img className="w-16 h-16" src={reactjs} alt="React" />
+                            <p>React</p>
                         </div>
-                        <div className="flex flex-col items-center">
-                            <img className="w-20 h-20" src={electron} alt="Electron" />
-                            <p>{language == "Español" ? "Electron JS" : "Electron JS"}</p>
+                        <div className="flex flex-col items-center w-24">
+                            <img className="w-16 h-16" src={electron} alt="Electron" />
+                            <p>Electron JS</p>
                         </div>
-
-                        <div className="flex flex-col items-center">
-                            <img className="w-20 h-20" src={css} alt="CSS" />
-                            <p>{language == "Español" ? "CSS" : "CSS"}</p>
+                        <div className="flex flex-col items-center w-24">
+                            <img className="w-16 h-16" src={css} alt="CSS" />
+                            <p>CSS</p>
                         </div>
-                        <div className="flex flex-col items-center">
-                            <img className="w-20 h-20" src={html} alt="HTML" />
-                            <p>{language == "Español" ? "HTML" : "HTML"}</p>
+                        <div className="flex flex-col items-center w-24">
+                            <img className="w-16 h-16" src={html} alt="HTML" />
+                            <p>HTML</p>
                         </div>
-                        <div className="flex flex-col items-center">
-                            <img className="w-20 h-20" src={git} alt="Git" />
-                            <p>{language == "Español" ? "Git" : "Git"}</p>
+                        <div className="flex flex-col items-center w-24">
+                            <img className="w-16 h-16" src={git} alt="Git" />
+                            <p>Git</p>
                         </div>
-                        <div className="flex flex-col items-center">
-                            <img className="w-20 h-20" src={tailwind} alt="Tailwind" />
-                            <p>{language == "Español" ? "Tailwind" : "Tailwind"}</p>
+                        <div className="flex flex-col items-center w-24">
+                            <img className="w-16 h-16" src={tailwind} alt="Tailwind" />
+                            <p>Tailwind</p>
                         </div>
-                        <div className="flex flex-col items-center">
-                            <img className="w-20 h-20" src={figma} alt="Figma" />
-                            <p>{language == "Español" ? "Figma" : "Figma"}</p>
+                        <div className="flex flex-col items-center w-24">
+                            <img className="w-16 h-16" src={figma} alt="Figma" />
+                            <p>Figma</p>
                         </div>
-                        <div className="flex flex-col items-center">
-                            <img className="w-20 h-20" src={ts} alt="Typescript" />
+                        <div className="flex flex-col items-center w-24">
+                            <img className="w-16 h-16" src={ts} alt="Typescript" />
                             <p>Typescript</p>
                         </div>
-                        <div className="flex flex-col items-center">
-                            <img className="w-20 h-20" src={supabase} alt="Supabase" />
+                        <div className="flex flex-col items-center w-24">
+                            <img className="w-16 h-16" src={supabase} alt="Supabase" />
                             <p>Supabase</p>
                         </div>
-
-                        <div className="flex flex-col items-center">
-                            <img className="w-20 h-20" src={sql} alt="SQL" />
+                        <div className="flex flex-col items-center w-24">
+                            <img className="w-16 h-16" src={sql} alt="SQL" />
                             <p>SQL</p>
                         </div>
                     </div>
@@ -233,6 +234,7 @@ function Home() {
 
 
 
+                {/* horas perdidas intentando hacer esta mierda responsive [7] */}
 
                 <section className="w-250 flex-wrap place-self-center  gap-10 justify-center items-center">
 
@@ -411,21 +413,27 @@ function Home() {
                 </section>
                 {/**separador */}
 
-                <section id="contact" className=" flex gap-33 text-amber-50 lg:flex-row justify-center items-center">
-
-                    <div className="flex flex-col gap-5  mt-5">
-
+                <section
+                    id="contact"
+                    className="flex flex-col lg:flex-row gap-10 text-amber-50 justify-center items-center px-4"
+                >
+                    <div className="flex flex-col gap-5 mt-5 w-full max-w-md">
                         <div>
-                            <Contact></Contact>
+                            <Contact />
                         </div>
-
-                        <div className="flex place-content-center gap-10 ">
-                            <div onClick={() => window.open("https://github.com/FrancoMarchetta", "blank_")} className="flex justify-center items-center hover:text-blue-500 duration-200   cursor-pointer ">
-                                <img src={github} alt="GitHub" className="lg:w-12 brightness-0 invert  hover:cursor-pointer" />
+                        <div className="flex flex-col sm:flex-row place-content-center gap-6 sm:gap-10 w-full">
+                            <div
+                                onClick={() => window.open("https://github.com/FrancoMarchetta", "_blank")}
+                                className="flex justify-center items-center hover:text-blue-500 duration-200 cursor-pointer gap-2"
+                            >
+                                <img src={github} alt="GitHub" className="w-10 lg:w-12 brightness-0 invert" />
                                 <p>GitHub</p>
                             </div>
-                            <div onClick={() => window.open("https://www.linkedin.com/in/franco-marchetta-a37195254/", "blank_")} className="flex  hover:text-blue-500 duration-200  justify-center items-center cursor-pointer ">
-                                <img src={linkedin} alt="" className="lg:w-10 brightness-0 invert hover:cursor-pointer" />
+                            <div
+                                onClick={() => window.open("https://www.linkedin.com/in/franco-marchetta-a37195254/", "_blank")}
+                                className="flex justify-center items-center hover:text-blue-500 duration-200 cursor-pointer gap-2"
+                            >
+                                <img src={linkedin} alt="Linkedin" className="w-8 lg:w-10 brightness-0 invert" />
                                 <p>Linkedin</p>
                             </div>
                         </div>

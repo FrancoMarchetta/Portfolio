@@ -29,17 +29,13 @@ import linkedin from "../images/linkedin.svg"
 import github from "../images/github.svg"
 import { useNavigate } from "react-router-dom";
 import Contact from "../components/Contact";
-import { atom, useAtom } from "jotai";
+import {  useAtom } from "jotai";
 
 import { atomLanguage } from '../components/NavBar';
-import { useEffect } from "react";
 
 
 //arregla la poronga de error por no haber leido o usado "atom" en el deploy 
-useEffect(() => {
-    console.log(atom,);
 
-})
 
 function Home() {
     //si se deja el secondButtonText vacio, no se renderiza el boton. Epica solucion de mi parte
@@ -75,6 +71,8 @@ function Home() {
         window.open("https://password-generator-eta-khaki.vercel.app/", "_blank")
 
     }
+
+
 
 
     return (

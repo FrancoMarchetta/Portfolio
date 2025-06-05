@@ -3,11 +3,17 @@ import type { FormEvent } from 'react';
 import "./css/Form.css"
 import emailjs from "@emailjs/browser";
 
+import { atomLanguage } from './NavBar';
+import { useAtom } from 'jotai';
+
+
 function Contact() {
     const emailInputRef = useRef<HTMLInputElement>(null);
     const messageInputRef = useRef<HTMLInputElement>(null);
     const sendButtonRef = useRef<HTMLButtonElement>(null);
     const [isVisible, setIsVisible] = useState<boolean>(false);
+
+    const [language, setLanguage] = useAtom(atomLanguage);
 
     const sendEmail = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -41,14 +47,20 @@ function Contact() {
     return (
         <section className='formContainer'>
             <div>
-                <h1>Escribime...</h1>
+                <h1>
+                    {language == "Español" ? "Escribime..."
+                        :
+                        "Send me a message..."}
+                </h1>
                 <form onSubmit={sendEmail}>
                     <div>
                         <label htmlFor="email">Email</label>
                         <input
                             ref={emailInputRef}
                             name='emailFrom'
-                            placeholder="Ingresa tu email"
+                            placeholder={language == "Español" ? "Ingresa tu email"
+                                :
+                                "Enter your email"}
                             id="email"
                             type="email"
                         />
@@ -58,13 +70,21 @@ function Contact() {
                         <input
                             ref={messageInputRef}
                             name='message'
-                            placeholder="Escribi tu mensaje"
+                            placeholder={language == "Español" ? "Ingresa un mensaje"
+                                :
+                                "Enter a message"}
                             type="text"
                         />
                     </div>
-                    <button ref={sendButtonRef} type='submit'>Enviar</button>
+                    <button ref={sendButtonRef} type='submit'>
+                        {language == "Español" ? "Enviar!"
+                            :
+                            "Send!"}
+                    </button>
                     <p className={isVisible ? "showSentText" : "hideSentText"}>
-                        Enviado!
+                        {language == "Español" ? "Enviado!."
+                            :
+                            "Delivered!."}
                     </p>
                 </form>
             </div>

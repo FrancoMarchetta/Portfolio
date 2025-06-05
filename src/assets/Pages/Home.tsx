@@ -29,11 +29,16 @@ import linkedin from "../images/linkedin.svg"
 import github from "../images/github.svg"
 import { useNavigate } from "react-router-dom";
 import Contact from "../components/Contact";
+import { atom, useAtom } from "jotai";
+
+import { atomLanguage } from '../components/NavBar';
 
 
 function Home() {
     //si se deja el secondButtonText vacio, no se renderiza el boton. Epica solucion de mi parte
     const path = useNavigate();
+
+    const [language, setLanguage] = useAtom(atomLanguage)
 
     const goInfoInmoVW = () => {
         path("/InmoVW")
@@ -85,16 +90,23 @@ function Home() {
                             rootMargin="-50px"
                         />
                     </div>
-                    <div className="p-4 fade-in flex flex-col justify-center text-amber-50 text-2xl max-w-3xl lg:ml-81 mt-20 mb-20 ">
+                    <div className="fade-in flex flex-col justify-center text-amber-50 text-2xl max-w-3xl lg:ml-81 mt-20 mb-20 ">
+
                         <p>
-                            Estudiante de Desarrollo de Software con enfoque en la creación de interfaces web dinámicas y adaptables. Me enfoco en construir soluciones digitales intuitivas. Valoro el trabajo en equipo, la comunicación clara y la disposición para aprender continuamente, lo que me permite adaptarme con facilidad a nuevos entornos y desafíos.
+                            {language == "Español" ? "Estudiante de Desarrollo de Software con enfoque en la creación de interfaces web dinámicas y adaptables. Me enfoco en construir soluciones digitales intuitivas. Valoro el trabajo en equipo, la comunicación clara y la disposición para aprender continuamente, lo que me permite adaptarme con facilidad a nuevos entornos y desafíos."
+                                :
+                                "Software Development student focused on creating dynamic and adaptive web interfaces. I focus on building intuitive digital solutions. I value teamwork, clear communication, and a willingness to continually learn, which allows me to easily adapt to new environments and challenges."}
+
                         </p>
+
                         <br />
 
                         <div className="flex gap-5">
                             <button style={{ borderRadius: "10px" }} className="bg-amber-50 hover:bg-amber-200 hover:cursor-pointer hover:-translate-y-2  duration-200 text-2xl lg:w-50 h-12 text-black ">
                                 <a href={cv} download={"FrancoMarchetta.pdf"}>
-                                    Descargar CV
+                                    {language == "Español" ? "Descargar CV."
+                                        :
+                                        "Download CV."}
                                 </a>
 
                             </button>
@@ -127,7 +139,9 @@ function Home() {
 
                 <section id="technologies" className="flex items-center gap-4 my-12 px-4">
                     <div className="flex-grow border-t border-gray-600"></div>
-                    <h2 className="text-3xl font-bold text-blue-400 whitespace-nowrap">Tecnologias</h2>
+                    <h2 className="text-3xl font-bold text-blue-400 whitespace-nowrap">{language == "Español" ? "Tecnologias."
+                        :
+                        "Technologies."}</h2>
                     <div className="flex-grow border-t border-gray-600"></div>
                 </section>
 
@@ -143,42 +157,39 @@ function Home() {
 
                 <section id="technologies">
 
-                    <div
-                        id="technologies-container"
-                        className="text-amber-50 w-full max-w-5xl mx-auto flex flex-wrap gap-10 justify-center items-center"
-                    >
+                    <div id="technologies-container" className="text-amber-50 w-200 flex place-self-center flex-wrap flex-col lg:flex-row gap-10 justify-center items-center">
                         <div className="flex flex-col items-center">
                             <img className="w-20 h-20" src={js} alt="Javascript" />
-                            <p>Javascript</p>
+                            <p>{language == "Español" ? "Javascript" : "Javascript"}</p>
                         </div>
                         <div className="flex flex-col items-center">
                             <img className="w-20 h-20" src={reactjs} alt="React" />
-                            <p>React</p>
+                            <p>{language == "Español" ? "React" : "React"}</p>
                         </div>
                         <div className="flex flex-col items-center">
                             <img className="w-20 h-20" src={electron} alt="Electron" />
-                            <p>Electron JS</p>
+                            <p>{language == "Español" ? "Electron JS" : "Electron JS"}</p>
                         </div>
 
                         <div className="flex flex-col items-center">
                             <img className="w-20 h-20" src={css} alt="CSS" />
-                            <p>CSS</p>
+                            <p>{language == "Español" ? "CSS" : "CSS"}</p>
                         </div>
                         <div className="flex flex-col items-center">
                             <img className="w-20 h-20" src={html} alt="HTML" />
-                            <p>HTML</p>
+                            <p>{language == "Español" ? "HTML" : "HTML"}</p>
                         </div>
                         <div className="flex flex-col items-center">
                             <img className="w-20 h-20" src={git} alt="Git" />
-                            <p>Git</p>
+                            <p>{language == "Español" ? "Git" : "Git"}</p>
                         </div>
                         <div className="flex flex-col items-center">
                             <img className="w-20 h-20" src={tailwind} alt="Tailwind" />
-                            <p>Tailwind</p>
+                            <p>{language == "Español" ? "Tailwind" : "Tailwind"}</p>
                         </div>
                         <div className="flex flex-col items-center">
                             <img className="w-20 h-20" src={figma} alt="Figma" />
-                            <p>Figma</p>
+                            <p>{language == "Español" ? "Figma" : "Figma"}</p>
                         </div>
                         <div className="flex flex-col items-center">
                             <img className="w-20 h-20" src={ts} alt="Typescript" />
@@ -214,56 +225,51 @@ function Home() {
 
                 <section id="projects" className="flex items-center gap-4 my-12 px-4">
                     <div className="flex-grow border-t border-gray-600"></div>
-                    <h2 className="text-3xl font-bold text-blue-400 whitespace-nowrap">Proyectos</h2>
+                    <h2 className="text-3xl font-bold text-blue-400 whitespace-nowrap">{language == "Español" ? "Proyectos."
+                        :
+                        "Projects."}</h2>
                     <div className="flex-grow border-t border-gray-600"></div>
                 </section>
 
 
 
 
-                {/**Esto es absolutamente imposible de volver responsive.
-                * Horas perdidas en esto: [7]
-                */}
-
                 <section className="w-250 flex-wrap place-self-center  gap-10 justify-center items-center">
 
                     <div>
                         <Card
                             img={inmovw}
-                            projectName="Inmovw"
-                            description=" Aplicación web desarrollada con React, TypeScript, CSS y Supabase, diseñada para gestionar propiedades inmobiliarias. La plataforma permite a los usuarios buscar y filtrar propiedades de forma sencilla, visualizando las mejores opciones disponibles en su zona."
-                            buttonText="Info"
+                            projectName={language == "Español" ? "Inmovw" : "Inmovw"}
+                            description={
+                                language == "Español"
+                                    ? "Aplicación web desarrollada con React, TypeScript, CSS y Supabase, diseñada para gestionar propiedades inmobiliarias. La plataforma permite a los usuarios buscar y filtrar propiedades de forma sencilla, visualizando las mejores opciones disponibles en su zona."
+                                    : "Web application developed with React, TypeScript, CSS, and Supabase, designed to manage real estate properties. The platform allows users to easily search and filter properties, displaying the best options available in their area."
+                            }
+                            buttonText={language == "Español" ? "Info" : "Info"}
                             buttonImage={info}
                             secondButtonText=""
                             secondButtonImage={code}
                             goToInfo={goInfoInmoVW}
                             goToCode={""}
                         >
-                            <div className="flex gap-4 lg:w-fit">
-
+                            <div className="flex gap-4 w-fit">
                                 <div style={{ borderRadius: "8px" }} className="w-30 flex place-content-center bg-blue-700 text-amber-50 ">
                                     <img className="w-8" src={reactjs} alt="" />
                                     <p className="mt-0.5">React js</p>
                                 </div>
-
                                 <div style={{ borderRadius: "8px" }} className="w-30 flex place-content-center bg-blue-950 text-amber-50 ">
                                     <img className="w-6 h-6 place-self-center" src={ts} alt="" />
                                     <p className="mt-0.5">Typescript</p>
                                 </div>
-
                                 <div style={{ borderRadius: "8px" }} className="w-30 flex place-content-center bg-green-700 text-amber-50 ">
                                     <img className="w-8" src={supabase} alt="" />
                                     <p className="mt-0.5">Supabase</p>
                                 </div>
-
                                 <div style={{ borderRadius: "8px" }} className="w-30 flex place-content-center bg-blue-700 text-amber-50 ">
                                     <img className="w-8" src={css} alt="" />
                                     <p className="mt-0.5">Css</p>
                                 </div>
-
                             </div>
-
-
                         </Card>
                     </div>
 
@@ -274,11 +280,15 @@ function Home() {
                     <div>
                         <Card
                             img={blackjack}
-                            projectName="Blackjack"
-                            description="Juego de cartas Blackjack, desarrollado con React y Tailwind CSS. El objetivo es sumar 21 puntos o lo más cercano posible sin pasarse."
-                            buttonText="info"
+                            projectName={language == "Español" ? "Blackjack" : "Blackjack"}
+                            description={
+                                language == "Español"
+                                    ? "Juego de cartas Blackjack, desarrollado con React y Tailwind CSS. El objetivo es sumar 21 puntos o lo más cercano posible sin pasarse."
+                                    : "Blackjack card game, developed with React and Tailwind CSS. The goal is to reach 21 points or as close as possible without going over."
+                            }
+                            buttonText={language == "Español" ? "Info" : "Info"}
                             buttonImage={info}
-                            secondButtonText="Github"
+                            secondButtonText={language == "Español" ? "Github" : "Github"}
                             secondButtonImage={code}
                             goToCode={goToCodeBlackJack}
                             goToInfo={goInfoBlackJack}
@@ -315,11 +325,15 @@ function Home() {
                     <div>
                         <Card
                             img={starbucks}
-                            projectName="Clon de Starbucks"
-                            description="Clon no oficial de la página web de Starbucks, creado únicamente con fines educativos y de práctica personal."
-                            buttonText="info"
+                            projectName={language == "Español" ? "Clon de Starbucks" : "Starbucks Clone"}
+                            description={
+                                language == "Español"
+                                    ? "Clon no oficial de la página web de Starbucks, creado únicamente con fines educativos y de práctica personal."
+                                    : "Unofficial clone of the Starbucks website, created solely for educational and personal practice purposes."
+                            }
+                            buttonText={language == "Español" ? "Info" : "Info"}
                             buttonImage={info}
-                            secondButtonText="Github"
+                            secondButtonText={language == "Español" ? "Github" : "Github"}
                             secondButtonImage={code}
                             goToCode={goToCodeStarbucks}
                             goToInfo={goInfoBlackStarbucks}
@@ -353,11 +367,15 @@ function Home() {
                     <div>
                         <Card
                             img={passwordGenerator}
-                            projectName="Generador de contraseñas"
-                            description="Aplicacion simple para crear contraseñas aleatorias seguras."
-                            buttonText="info"
+                            projectName={language == "Español" ? "Generador de contraseñas" : "Password Generator"}
+                            description={
+                                language == "Español"
+                                    ? "Aplicacion simple para crear contraseñas aleatorias seguras."
+                                    : "Simple app to create secure random passwords."
+                            }
+                            buttonText={language == "Español" ? "Info" : "Info"}
                             buttonImage={info}
-                            secondButtonText="Github"
+                            secondButtonText={language == "Español" ? "Github" : "Github"}
                             secondButtonImage={code}
                             goToCode={goToCodePasswordGenerator}
                             goToInfo={goToInfoPasswordGenerator}
@@ -393,35 +411,21 @@ function Home() {
                 </section>
                 {/**separador */}
 
-                <section
-                    id="contact"
-                    className="flex flex-col lg:flex-row gap-10 text-amber-50 justify-center items-center px-4 w-full"
-                >
-                    <div className="flex flex-col gap-5 mt-5 w-full max-w-md">
+                <section id="contact" className=" flex gap-33 text-amber-50 lg:flex-row justify-center items-center">
+
+                    <div className="flex flex-col gap-5  mt-5">
+
                         <div>
-                            <Contact />
+                            <Contact></Contact>
                         </div>
-                        <div className="flex justify-center ml-16  gap-10 flex-wrap">
-                            <div
-                                onClick={() => window.open("https://github.com/FrancoMarchetta", "_blank")}
-                                className="flex items-center hover:text-blue-500 duration-200 cursor-pointer gap-2"
-                            >
-                                <img
-                                    src={github}
-                                    alt="GitHub"
-                                    className="w-8 lg:w-12 brightness-0 invert hover:cursor-pointer"
-                                />
+
+                        <div className="flex place-content-center gap-10 ">
+                            <div onClick={() => window.open("https://github.com/FrancoMarchetta", "blank_")} className="flex justify-center items-center hover:text-blue-500 duration-200   cursor-pointer ">
+                                <img src={github} alt="GitHub" className="lg:w-12 brightness-0 invert  hover:cursor-pointer" />
                                 <p>GitHub</p>
                             </div>
-                            <div
-                                onClick={() => window.open("https://www.linkedin.com/in/franco-marchetta-a37195254/", "_blank")}
-                                className="flex items-center hover:text-blue-500 duration-200 cursor-pointer gap-2"
-                            >
-                                <img
-                                    src={linkedin}
-                                    alt="Linkedin"
-                                    className="w-8 lg:w-10 brightness-0 invert hover:cursor-pointer"
-                                />
+                            <div onClick={() => window.open("https://www.linkedin.com/in/franco-marchetta-a37195254/", "blank_")} className="flex  hover:text-blue-500 duration-200  justify-center items-center cursor-pointer ">
+                                <img src={linkedin} alt="" className="lg:w-10 brightness-0 invert hover:cursor-pointer" />
                                 <p>Linkedin</p>
                             </div>
                         </div>
